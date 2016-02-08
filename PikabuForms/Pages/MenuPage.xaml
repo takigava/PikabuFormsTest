@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="PikabuForms.MenuPage" 
+	BindingContext="{Binding MenuViewModel}" 
+	Title="Master" 
+	xmlns:local="clr-namespace:PikabuForms;assembly=PikabuForms.Droid">
+<ContentPage.Resources>
+        <ResourceDictionary>
+            <local:MenuStateToPaddingConverter x:Key="mstpConverter"></local:MenuStateToPaddingConverter>
+            <local:MenuStateToColorConverter x:Key="mstcConverter"></local:MenuStateToColorConverter>
+        </ResourceDictionary>
+        </ContentPage.Resources>
+    
+          	  
+          
+<ListView CachingStrategy="RecycleElement" x:Name="MenuListView" RowHeight="50"  SeparatorVisibility="None" IsGroupingEnabled="true"
+            GroupDisplayBinding="{ Binding Name }"
+            GroupShortNameBinding ="{ Binding ShortName }">
+<ListView.BackgroundColor>
+	<OnPlatform x:TypeArguments="Color">
+        <OnPlatform.iOS>#373A3C</OnPlatform.iOS>
+        <OnPlatform.Android>#373A3C</OnPlatform.Android>
+    </OnPlatform>
+</ListView.BackgroundColor>
+<!--<ListView.Header>
+	
+
+		<StackLayout Orientation="Horizontal" HeightRequest="80" HorizontalOptions="FillAndExpand" Padding="10,0,0,0"
+			 BackgroundColor="#2E2F31">
+    <local:ImageCircle Source="profileIcon" HeightRequest="48" WidthRequest="48" />
+        <Label x:Name="MenuUserName"
+        TextColor="White" VerticalOptions="Center" HorizontalOptions="Start" FontSize="18"/>
+    </StackLayout>
+    
+</ListView.Header>-->
+<ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                    	<StackLayout Orientation="Vertical" HeightRequest="49" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                    	<StackLayout Orientation="Horizontal" HeightRequest="48" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Padding="15,0,0,0">
+                    		<Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                    	</StackLayout>
+                    		<StackLayout Padding="15,0,15,0">
+                    			<BoxView HeightRequest="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Color="#EDB84B"/>
+                    		</StackLayout>
+                    	</StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+            <StackLayout Orientation="Horizontal" HeightRequest="48" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Padding="{Binding State,Converter={StaticResource mstpConverter}}" BackgroundColor="{Binding State,Converter={StaticResource mstcConverter}}">
+              <BoxView VerticalOptions="Start"  Color="#EDB84B" WidthRequest="5" HeightRequest="50" IsVisible="{Binding State}"/>
+              <Image Source="{Binding Icon}" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="32" WidthRequest="32"  />
+              <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" TextColor="White" FontSize="14" />
+              </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
+</ContentPage>

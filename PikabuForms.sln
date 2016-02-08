@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PikabuForms", "PikabuForms\PikabuForms.shproj", "{8C1A1008-D879-4412-8173-F2337533FBA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PikabuForms.Droid", "Droid\PikabuForms.Droid.csproj", "{BF6217FF-3C9B-4607-8DBE-2E0E25AD9EEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF6217FF-3C9B-4607-8DBE-2E0E25AD9EEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6217FF-3C9B-4607-8DBE-2E0E25AD9EEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6217FF-3C9B-4607-8DBE-2E0E25AD9EEA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BF6217FF-3C9B-4607-8DBE-2E0E25AD9EEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6217FF-3C9B-4607-8DBE-2E0E25AD9EEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		PikabuForms\PikabuForms.projitems*{8c1a1008-d879-4412-8173-f2337533fba7}*SharedItemsImports = 13
+		PikabuForms\PikabuForms.projitems*{bf6217ff-3c9b-4607-8dbe-2e0e25ad9eea}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

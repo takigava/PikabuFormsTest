@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="PikabuForms.FeedPage"
+	xmlns:local="clr-namespace:PikabuForms;assembly=PikabuForms.Droid" Padding="5,0,5,0">
+	<ContentPage.ToolbarItems>
+        <ToolbarItem Name="Update" Icon="update"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ListView CachingStrategy="RecycleElement" x:Name="FeedListView" SeparatorVisibility="None" HasUnevenRows="true">
+    	<ListView.ItemTemplate>
+    		<OnPlatform x:TypeArguments="DataTemplate">
+        		<OnPlatform.iOS><DataTemplate>
+            	<ViewCell>
+            		
+            			<Label Text="{Binding AuthorName}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+    				
+            	</ViewCell>
+        	</DataTemplate></OnPlatform.iOS>
+        		<OnPlatform.Android><DataTemplate>
+            	<ViewCell>
+            		<local:CardContentView BackgroundColor="White">
+<!--            			<Label Text="{Binding AuthorName}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>-->
+            			<Grid  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+            				<Grid.RowDefinitions>
+      							<RowDefinition Height="24" />
+      							<RowDefinition Height="Auto" />
+      							<RowDefinition Height="164" />
+      							<RowDefinition Height="42" />
+    						</Grid.RowDefinitions>
+    						<StackLayout Orientation="Horizontal" Grid.Row="0" Padding="5,5,10,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+    							<Label Text="{Binding RatingString}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="#4EAD4D"/>
+    							<Label Text="{Binding AuthorName}" VerticalOptions="Center" HorizontalOptions="End" HorizontalTextAlignment="End"/>
+    							<Label Text="{Binding PostTime}" VerticalOptions="Center" HorizontalOptions="End" HorizontalTextAlignment="End"/>
+    						</StackLayout>
+    						<StackLayout Orientation="Vertical" Grid.Row="1" Padding="5,5,10,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+    							<Label Text="{Binding Title}"  VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="22" TextColor="Black"/>
+    							<Label Text="{Binding Description}"  VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="16"/>
+    							<Label Text="{Binding Tags}"  VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" TextColor="#4EAD4D"/>
+    						</StackLayout>
+
+    						<Image Source="menuBackground" Grid.Row="2" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill"/>
+    						<StackLayout Orientation="Horizontal" Grid.Row="3" Padding="5,0,10,10" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+    							<StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+    								<Label Text="{Binding CardRating}"  VerticalOptions="End" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="10" VerticalTextAlignment="End"/>
+    								<Label Text="{Binding CardComments}"  VerticalOptions="Start" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="10" VerticalTextAlignment="Start"/>
+    							</StackLayout>
+    							<Image Source="upArrow"  VerticalOptions="Center" HorizontalOptions="End" />
+    							<Image Source="downArrow"  VerticalOptions="Center" HorizontalOptions="End" />
+    							<Image Source="star"  VerticalOptions="Center" HorizontalOptions="End" />
+<!--    							<Image Source="delete"  VerticalOptions="Center" HorizontalOptions="End" />-->
+    							<Image Source="moreVertical"  VerticalOptions="Center" HorizontalOptions="End" />
+    						</StackLayout>
+            			</Grid>
+    				</local:CardContentView>
+            	</ViewCell>
+        	</DataTemplate></OnPlatform.Android>
+    		</OnPlatform>
+    	</ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

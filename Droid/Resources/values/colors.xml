@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+  <color name="primary">#4EAD4D</color>
+  <color name="primaryDark">#3E8A3D</color>
+  <color name="accent">#EDB84B</color>
+  <color name="accentActivated">#80D4D5D4</color>
+</resources>

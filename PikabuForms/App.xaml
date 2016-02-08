@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PikabuForms.App"
+    xmlns:local="clr-namespace:PikabuForms;assembly=PikabuForms.Droid">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Green" />
+            </Style>
+            <DataTemplate x:Key="AndroidFeedItem">
+            	<ViewCell>
+            		<local:CardContentView>
+            			<Label Text="{Binding AuthorName}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+    				</local:CardContentView>
+            	</ViewCell>
+        	</DataTemplate>
+        	<DataTemplate x:Key="IOSFeedItem">
+            	<ViewCell>
+            	</ViewCell>
+        	</DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
